@@ -4,7 +4,7 @@ package edu.eci.cvds.sampleprj.dao;
 import edu.eci.cvds.samples.entities.Cliente;
 import java.util.List;
 import java.sql.Date;
-import org.apache.ibatis.exceptions.PersistenceException;
+
 
 public interface ClienteDAO {
     
