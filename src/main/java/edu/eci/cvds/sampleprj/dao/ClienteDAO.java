@@ -1,5 +1,5 @@
 
-package edu.eci.cvds.sampleprj.dao.mybatis;
+package edu.eci.cvds.sampleprj.dao;
 
 import edu.eci.cvds.samples.entities.Cliente;
 import java.util.List;
