@@ -20,5 +20,5 @@ public interface ItemMapper {
     
     public void insertarItem(Item it);
 
-        
+   public void actualizarTarifa( int id, long tarifa);
 }

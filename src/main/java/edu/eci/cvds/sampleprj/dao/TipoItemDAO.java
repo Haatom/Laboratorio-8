@@ -3,7 +3,7 @@ package edu.eci.cvds.sampleprj.dao;
 import edu.eci.cvds.samples.entities.TipoItem;
 
 import java.util.List;
-import org.apache.ibatis.exceptions.PersistenceException;
+
 /**
  *
  * @author david
