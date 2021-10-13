@@ -3,6 +3,7 @@ package edu.eci.cvds.samples.services;
 import com.google.inject.Injector;
 import edu.eci.cvds.sampleprj.dao.ClienteDAO;
 import edu.eci.cvds.sampleprj.dao.ItemDAO;
+import edu.eci.cvds.sampleprj.dao.ItemRentadoDAO;
 import edu.eci.cvds.sampleprj.dao.TipoItemDAO;
 
 import edu.eci.cvds.sampleprj.dao.mybatis.MyBATISClienteDAO;
@@ -30,18 +31,23 @@ public class ServiciosAlquilerFactory {
                setEnvironmentId(env);
                setClassPathResource(pathResource);
                bind(ItemDAO.class).to(MyBATISItemDAO.class);
-               bind(ServiciosAlquiler.class).to(ServiciosAlquilerImpl.class);
+               bind(ItemRentadoDAO.class).to(edu.eci.cvds.sampleprj.dao.mybatis.MYBATISItemRentado.class);
+               bind(TipoItemDAO.class).to(MyBATISTipoItemDAO.class);
+               bind(ClienteDAO.class).to(MyBATISClienteDAO.class);
+               bind(ServiciosAlquiler.class).to(edu.eci.cvds.samples.services.impl.ServiciosAlquilerImpl.class);
            }
        });
    }
 
    private ServiciosAlquilerFactory(){
+
        optInjector = Optional.empty();
    }
 
    public ServiciosAlquiler getServiciosAlquiler(){
        if (!optInjector.isPresent()) {
            optInjector = Optional.of(myBatisInjector("development","mybatis-config.xml"));
+
        }
 
        return optInjector.get().getInstance(ServiciosAlquiler.class);
@@ -58,7 +64,14 @@ public class ServiciosAlquilerFactory {
 
 
    public static ServiciosAlquilerFactory getInstance(){
+
        return instance;
    }
+
+    public static void main(String[] args) throws ExcepcionServiciosAlquiler {
+        System.out.println(instance.getServiciosAlquiler().consultarClientes().toString());
+
+
+    }
 
 }
