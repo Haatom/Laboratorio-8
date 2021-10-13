@@ -53,7 +53,7 @@ public class ServiciosAlquilerTest {
         }
     }
 
-
+    /** 
     @Test
     public void consultandoUnCliente() throws ExcepcionServiciosAlquiler {
         try {
@@ -368,3 +368,10 @@ public class ServiciosAlquilerTest {
         }
     }
 }
+
+
+
+
+
+
+*/
