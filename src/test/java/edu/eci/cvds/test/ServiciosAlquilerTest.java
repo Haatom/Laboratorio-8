@@ -58,9 +58,9 @@ public class ServiciosAlquilerTest {
     public void consultandoUnCliente() throws ExcepcionServiciosAlquiler {
         try {
             Cliente cliente = serviciosAlquiler.consultarCliente(2160666);
-            Assert.assertEquals("Nicolás Camacho",cliente.getNombre());
+            Assert.assertEquals("Javier López",cliente.getNombre());
         } catch(ExcepcionServiciosAlquiler e) {
-            throw new ExcepcionServiciosAlquiler("Error al realizar la consulta del cliente.",e);
+            throw new ExcepcionServiciosAlquiler("Error Prueba Consultar Cliente.",e);
         }
     }
 
