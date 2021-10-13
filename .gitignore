@@ -3,4 +3,4 @@
 *.log
 /shelf/
 /workspace.xml
-*.idea
+/.idea/
